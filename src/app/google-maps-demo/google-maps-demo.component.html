@@ -1,0 +1,11 @@
+
+<div>Latitude: {{display?.lat}}</div>
+<div>Longitude: {{display?.lng}}</div>
+
+<div *ngIf="apiLoaded | async">
+    <google-map width="100%" height="100%" 
+        [center]="center" [zoom]="zoom" 
+        (mapClick)="moveMap($event)"
+        (mapMousemove)="move($event)">
+    </google-map>
+</div>
